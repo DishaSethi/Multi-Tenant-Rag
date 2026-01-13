@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+temp.pdf
+# Virtual environments
+venv/
+ENV/
+.env
+
+# MacOS files
+.DS_Store
