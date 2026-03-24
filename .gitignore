@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 temp.pdf
+*.pdf
 # Virtual environments
 venv/
 ENV/

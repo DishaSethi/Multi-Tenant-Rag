@@ -6,7 +6,7 @@ from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 
-def process_input(source_type:str, tenant_id:str, value:str=None, file=None)-> List[Document]:
+def process_input(source_type:str, tenant_id:str, user_id:str,value:str=None, file=None)-> List[Document]:
     docs=[]
 
     if source_type=="link":
@@ -34,6 +34,7 @@ def process_input(source_type:str, tenant_id:str, value:str=None, file=None)-> L
 
     for chunk in chunks:
         chunk.metadata["tenant_id"]=tenant_id
+        chunk.metadata["user_id"]=user_id
         chunk.metadata["source_type"]=source_type
         if source_type=="link":
             chunk.metadata["source"]=value

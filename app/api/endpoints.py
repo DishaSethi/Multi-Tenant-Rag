@@ -48,7 +48,7 @@ async def ingest(
             raise HTTPException(status_code=400, detail="PDF file is required for source_type 'pdf'")
         
         # 1. Process into chunks
-        chunks = process_input(source_type, tenant_id, link, file)
+        chunks = process_input(source_type, tenant_id, user_id,link, file)
         
         # 2. Tag EVERY chunk with metadata
         for chunk in chunks:
